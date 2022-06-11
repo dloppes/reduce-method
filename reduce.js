@@ -56,3 +56,31 @@ let experienceByProfession = teamMembers.reduce((acc, curr) => {
 
 
 console.log(experienceByProfession);
+
+
+//another real world example of mixing filter(), map(), reduce()
+
+const orders = [
+  {
+    userId: 1,
+    amount: 10
+  },
+  {
+    userId: 1,
+    amount: 15
+  },
+  {
+    userId: 2,
+    amount: 5
+  },
+  {
+    userId: 2,
+    amount: 100
+  }
+];
+
+const user1 = orders.filter(order => order.userId === 1)
+.map(order => order.amount)
+.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
+console.log(user1);
